@@ -60,4 +60,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/notes']);
   }
 
+  crud() {
+    this.router.navigate(['/crud-test'])
+  }
+
 }

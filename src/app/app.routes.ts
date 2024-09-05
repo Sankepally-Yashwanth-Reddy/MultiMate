@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { GuessTheNumberComponent } from './guess-the-number/guess-the-number.component';
 import { VoteComponent } from './vote/vote.component';
 import { NotesComponent } from './notes/notes.component';
+import { CrudTestComponent } from './crud-test/crud-test.component';
 
 export const appRoutes = [
   { path: '', component: AuthenticationComponent },
@@ -20,6 +21,7 @@ export const appRoutes = [
   { path: 'guess-the-number', component: GuessTheNumberComponent },
   { path: 'notes', component: NotesComponent },
   { path: 'vote', component: VoteComponent },
+  { path: 'crud-test', component: CrudTestComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
