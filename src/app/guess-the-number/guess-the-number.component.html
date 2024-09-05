@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<section class="mm-guess-the-number">
+    <div class="mm-guess-the-number-header">
+        <h1 class="mm-gtn-heading">Guess The Number</h1>
+        <p class="mm-gtn-text">
+            Guess the number between 1 and 100
+        </p>
+        <div class="mm-guess-the-number-form">
+            <form (ngSubmit)="checkNumber()" class="mm-gtn-form">
+                <input type="number" name="guess" id="guessTheNumber"
+                    [(ngModel)]="number" class="mm-gtn-num-input"
+                    placeholder="Enter a number" required>
+                <button type="submit" class="mm-gtn-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="mm-guessed-number-container">
+        <p class="mm-gtn-message">
+            {{message}}
+        </p>
+        <p class="mm-gtn-tries">
+            Number of tries: {{tries}}
+        </p>
+        <button (click)="resetGame()" class="mm-gtn-reset">Play Again</button>
+    </div>
+</section>

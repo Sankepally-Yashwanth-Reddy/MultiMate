@@ -1,0 +1,13 @@
+<app-header></app-header>
+
+<section class="mm-home-section">
+    <div class="mm-app-cards-container">
+        @for(app of apps; track app) {
+            <div class="mm-app-card" tabindex="0" role="button" (click)="handleClick(app.name)" (keydown.enter)="handleClick(app.name)">
+                <h1 class="app-title">
+                    {{app.name}}
+                </h1>
+            </div>
+        }
+    </div>
+</section>

@@ -1,0 +1,16 @@
+/* ag-grid.component.css */
+.mm-ag-grid-examples-section {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.mm-ag-grid-example-1 {
+    width: 100%;
+    height: 400px;
+    /* or any fixed height to ensure the grid is visible */
+}

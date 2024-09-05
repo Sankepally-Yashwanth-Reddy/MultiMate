@@ -1,0 +1,102 @@
+/* random.component.css */
+
+/* Centering the Section */
+.mm-rng-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+/* Card Styling */
+.mm-rng-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Input and Label Styling */
+.mm-rng-values-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.mm-rng-value-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.mm-rng-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.mm-rng-input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.mm-rng-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button Styling */
+.mm-rng-button {
+    padding: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mm-rng-button:hover {
+    background-color: #0056b3;
+}
+
+/* Result Display */
+.mm-rng-result-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.mm-rng-result-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.mm-rng-result-input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #e9ecef;
+    margin-top: 10px;
+    color: #007bff;
+    font-weight: bold;
+    pointer-events: none;
+}

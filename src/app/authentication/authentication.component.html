@@ -1,0 +1,55 @@
+<section class="authentication-section">
+    <div class="authentication-container">
+        <form [formGroup]="isLoginMode ? loginForm : registerForm" (ngSubmit)="onSubmit()">
+            <h2>{{ isLoginMode ? 'Login' : 'Register' }}</h2>
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" type="text" formControlName="username" class="form-control"
+                    [attr.placeholder]="isLoginMode ? 'Username or Email' : 'Username'" autocomplete="username" />
+                <div *ngIf="(isLoginMode ? loginForm.get('username') : registerForm.get('username'))?.invalid &&
+                           ((isLoginMode ? loginForm.get('username') : registerForm.get('username'))?.touched || 
+                            (isLoginMode ? loginForm.get('username') : registerForm.get('username'))?.dirty)"
+                    class="invalid-feedback">
+                    Username or Email is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" *ngIf="!isLoginMode">Email</label>
+                <input id="email" *ngIf="!isLoginMode" type="email" formControlName="email" class="form-control"
+                    placeholder="Email" autocomplete="email" />
+                <div *ngIf="!isLoginMode && registerForm.get('email')?.invalid &&
+                           (registerForm.get('email')?.touched || registerForm.get('email')?.dirty)"
+                    class="invalid-feedback">
+                    Email is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <input id="password" [type]="passwordInputType" formControlName="password" class="form-control"
+                        placeholder="Password" autocomplete="current-password" />
+                    <i [ngClass]="passwordInputType === 'password' ? 'bi bi-eye-slash' : 'bi bi-eye'"
+                        (click)="togglePasswordVisibility()" aria-hidden="true"></i>
+                </div>
+                <div *ngIf="(isLoginMode ? loginForm.get('password') : registerForm.get('password'))?.invalid &&
+                           ((isLoginMode ? loginForm.get('password') : registerForm.get('password'))?.touched ||
+                            (isLoginMode ? loginForm.get('password') : registerForm.get('password'))?.dirty)"
+                    class="invalid-feedback">
+                    Password is required and should be at least 6 characters
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">{{ isLoginMode ? 'Login' : 'Register' }}</button>
+
+            <div class="form-switch" [tabIndex]="0">
+                <p *ngIf="isLoginMode">Don't have an account? <a href="javascript:void(0)" (click)="switchMode()" class="text-primary"
+                        [tabIndex]="0" (keydown.enter)="switchMode()">Register here</a></p>
+                <p *ngIf="!isLoginMode">Already have an account? <a href="javascript:void(0)" (click)="switchMode()" class="text-primary"
+                        [tabIndex]="0" (keydown.enter)="switchMode()">Login here</a></p>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,141 @@
+.mm-container {
+    position: relative;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.mm-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.mm-shape {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    mix-blend-mode: screen;
+}
+
+.mm-shape-1 {
+    width: 300px;
+    height: 300px;
+    top: 30%;
+    left: 10%;
+    animation: mm-move-1 10s infinite;
+}
+
+.mm-shape-2 {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    left: 70%;
+    animation: mm-move-2 8s infinite;
+}
+
+.mm-shape-3 {
+    width: 150px;
+    height: 150px;
+    top: 20%;
+    left: 50%;
+    animation: mm-move-3 12s infinite;
+}
+
+.mm-text-wrapper {
+    z-index: 2;
+}
+
+.mm-title {
+    font-size: 10rem;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 10px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    animation: mm-title-flicker 2s infinite;
+}
+
+.mm-message {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin: 1rem 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.mm-back-home {
+    padding: 1rem 2rem;
+    background: #ff0077;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 10px 30px rgba(255, 0, 119, 0.5);
+}
+
+.mm-back-home:hover {
+    background: #e6006c;
+    transform: scale(1.1);
+}
+
+@keyframes mm-move-1 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(50%, -50%) rotate(180deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes mm-move-2 {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(50%, 50%) scale(0.5);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes mm-move-3 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: translate(50%, 50%) rotate(180deg) scale(1.5);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
+}
+
+@keyframes mm-title-flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,140 @@
+/* General Styles */
+.mm-todo-section {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mm-todo-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Input and Button Styles */
+.mm-todo-header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.mm-todo-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.mm-todo-add-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.mm-todo-add-btn:hover {
+    background-color: #0056b3;
+}
+
+/* List Styles */
+.mm-todos-list-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mm-todos-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mm-todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.mm-todo-item:last-child {
+    border-bottom: none;
+}
+
+.mm-todo-text {
+    flex: 1;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.mm-todo-text:hover {
+    text-decoration: line-through;
+}
+
+.mm-todo-completed .mm-todo-text {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.mm-todo-delete-btn,
+.mm-todo-edit-btn {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 0.875rem;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.mm-todo-edit-btn {
+    background-color: #ffc107;
+}
+
+.mm-todo-delete-btn {
+    background-color: #dc3545;
+}
+
+.mm-todo-delete-btn:hover {
+    background-color: #c82333;
+}
+
+.mm-todo-edit-btn:hover {
+    background-color: #e0a800;
+}
+
+/* No Todos Message */
+.mm-no-todos {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
+
+/* Clear Completed Button */
+.mm-todo-clear-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.mm-todo-clear-btn:hover {
+    background-color: #218838;
+}

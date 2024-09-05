@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<section class="mm-todo-section">
+    <h1 class="mm-todo-title">Todo List</h1>
+
+    <div class="mm-todo-header">
+        <label for="newTodoInput" class="sr-only">Add a new todo</label>
+        <input class="mm-todo-input" type="text" id="newTodoInput" [(ngModel)]="newTodo" placeholder="Add a new todo"
+            aria-label="New todo" (keyup.enter)="addTodo()">
+        <button class="mm-todo-add-btn" (click)="addTodo()"
+            [attr.aria-label]="editingIndex !== null ? 'Update todo' : 'Add todo'">
+            {{ editingIndex !== null ? 'Update' : 'Add' }}
+        </button>
+    </div>
+
+    <div class="mm-todos-list-container">
+        <ul class="mm-todos-list" aria-live="polite">
+            <li *ngFor="let todo of todos; let i = index" class="mm-todo-item"
+                [class.mm-todo-completed]="todo.completed">
+
+                <span class="mm-todo-text" (click)="toggleComplete(i)" tabindex="0" (keydown.enter)="toggleComplete(i)"
+                    role="checkbox" [attr.aria-checked]="todo.completed" attr.aria-label="Todo item {{ todo.text }}">
+                    {{ todo.text }}
+                </span>
+
+                <button class="mm-todo-edit-btn" (click)="editTodo(i)" [attr.aria-label]="'Edit ' + todo.text">
+                    Edit
+                </button>
+
+                <button class="mm-todo-delete-btn" (click)="deleteTodo(i)" [attr.aria-label]="'Delete ' + todo.text">
+                    Delete
+                </button>
+            </li>
+
+            <li *ngIf="!todos.length" class="mm-no-todos" aria-live="assertive">
+                No todos
+            </li>
+        </ul>
+
+        <button *ngIf="todos.length" class="mm-todo-clear-btn" (click)="clearCompleted()"
+            aria-label="Clear completed todos">
+            Clear Completed
+        </button>
+    </div>
+</section>

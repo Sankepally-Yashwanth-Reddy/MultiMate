@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+<section class="mm-notes-section">
+    <div class="mm-notes-container">
+        <!-- Editor Section -->
+        <div class="mm-notes-textarea-conta">
+            <div class="card mm-editor-card">
+                <p-editor [(ngModel)]="text" [style]="{ height: '320px' }"></p-editor>
+                <button class="mm-save-note-btn" (click)="saveNote()">Save Note</button>
+            </div>
+        </div>
+
+        <!-- Stored Notes Section -->
+        <div class="mm-stored-notes-container">
+            <ul class="mm-notes-list-container">
+                <li *ngFor="let note of storedNotes; let i = index" class="mm-saved-notes-card-list">
+                    <div class="mm-saved-notes-card">
+                        <!-- Display Note -->
+                        <div *ngIf="!note.editing">
+                            <div class="mm-saved-note-content" [innerHTML]="note.content | slice:0:100"></div>
+                            <div class="mm-note-buttons">
+                                <button (click)="editNote(i)" class="mm-saved-note-card-edit-button">Edit</button>
+
+                                <button class="mm-view-more-btn" data-bs-toggle="modal" data-bs-target="#viewNoteModal"
+                                    (click)="viewMore(note.content)">View More</button>
+
+                                <button (click)="deleteNote(i)" class="mm-saved-note-card-delete-button">Delete</button>
+                            </div>
+                        </div>
+
+                        <!-- Edit Note -->
+                        <div *ngIf="note.editing" class="mm-edit-note-container">
+                            <p-editor [(ngModel)]="text" [style]="{ height: '320px' }"></p-editor>
+                            <button (click)="saveEditedNote(i)" class="mm-save-note-btn">Save Edited Note</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Modal for Viewing More -->
+<div class="modal fade" id="viewNoteModal" tabindex="-1" aria-labelledby="viewNoteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewNoteModalLabel">Note Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" [innerHTML]="selectedNote">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

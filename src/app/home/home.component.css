@@ -1,0 +1,63 @@
+/* home.component.css */
+
+/* Container styling for the section */
+.mm-home-section {
+    padding: 2rem;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Flex container for the cards */
+.mm-app-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1200px;
+    width: 100%;
+    padding: 1rem;
+    justify-content: center;
+}
+
+/* Styling for each app card */
+.mm-app-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 calc(33.333% - 2rem); /* Responsive layout */
+    max-width: calc(33.333% - 2rem); /* Responsive layout */
+}
+
+.mm-app-card:hover, .mm-app-card:focus {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the app title */
+.app-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .mm-app-card {
+        flex: 1 1 calc(50% - 2rem); /* Adjust for medium screens */
+        max-width: calc(50% - 2rem); /* Adjust for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .mm-app-card {
+        flex: 1 1 100%; /* Stack cards on small screens */
+        max-width: 100%; /* Stack cards on small screens */
+    }
+}

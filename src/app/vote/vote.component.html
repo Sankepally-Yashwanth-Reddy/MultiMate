@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<section class="mm-online-evm-machine-section">
+    <div class="mm-online-evm-machine-table-container">
+        <table class="mm-online-evm-machine-table" role="table">
+            <thead class="mm-table-header" role="rowgroup">
+                <tr class="mm-table-header-row" role="row">
+                    <th class="mm-table-column-name mm-symbols-column" scope="col">Symbols</th>
+                    <th class="mm-table-column-name mm-party-name-column" scope="col">Party Name</th>
+                    <th class="mm-table-column-name mm-led-light-column" scope="col">LED Light</th>
+                    <th class="mm-table-column-name mm-vote-column" scope="col">Vote</th>
+                </tr>
+            </thead>
+            <tbody class="mm-table-body" role="rowgroup">
+                @for(party of parties; track party) {
+                <tr class="mm-table-body-row" role="row">
+                    <td class="mm-table-column mm-party-symbols-column" role="cell">
+                        <img [src]="party.partySymbol" [alt]="party.partyName + ' logo'" role="img">
+                    </td>
+                    <td class="mm-table-column mm-party-name-column" role="cell">
+                        {{ party.partyName }}
+                    </td>
+                    <td class="mm-table-column mm-light-column" role="cell">
+                        <span class="mm-evm-light" [ngClass]="{'active': selectedParty === party.partyName}"
+                            attr.aria-label="LED light for {{ party.partyName }}" role="status">
+                        </span>
+                    </td>
+                    <td class="mm-table-column mm-radio-vote-column" role="cell">
+                        <input type="radio" class="btn-check" [id]="party.partyName" name="options"
+                            [value]="party.partyName" [(ngModel)]="selectedParty" (change)="onVote(party.partyName)"
+                            [attr.aria-disabled]="isVotingDisabled ? 'true' : null"
+                            [attr.tabindex]="isVotingDisabled ? '-1' : '0'"
+                            [attr.aria-label]="'Vote for ' + party.partyName">
+                        <label class="btn btn-primary" [for]="party.partyName"
+                            [ngClass]="{'disabled': isVotingDisabled}"
+                            [attr.aria-disabled]="isVotingDisabled ? 'true' : null"
+                            [attr.tabindex]="isVotingDisabled ? '-1' : '0'"
+                            [attr.aria-label]="'Vote button for ' + party.partyName">
+                            Vote
+                        </label>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

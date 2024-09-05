@@ -1,0 +1,151 @@
+/* General Layout */
+.mm-notes-section {
+    padding: 20px;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.mm-notes-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Editor Section */
+.mm-notes-textarea-conta {
+    display: flex;
+    justify-content: center;
+}
+
+.mm-editor-card {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mm-save-note-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mm-save-note-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Stored Notes Section */
+.mm-stored-notes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mm-notes-list-container {
+    list-style: none;
+    padding: 0;
+}
+
+.mm-saved-notes-card-list {
+    margin-bottom: 15px;
+}
+
+.mm-saved-notes-card {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Saved Note Content */
+.mm-saved-note-content {
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+/* Note Buttons */
+.mm-note-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.mm-saved-note-card-edit-button,
+.mm-view-more-btn,
+.mm-saved-note-card-delete-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mm-saved-note-card-edit-button {
+    background-color: #ffc107;
+    color: #ffffff;
+}
+
+.mm-saved-note-card-edit-button:hover {
+    background-color: #e0a800;
+}
+
+.mm-view-more-btn {
+    background-color: #17a2b8;
+    color: #ffffff;
+}
+
+.mm-view-more-btn:hover {
+    background-color: #138496;
+}
+
+.mm-saved-note-card-delete-button {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.mm-saved-note-card-delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Modal Styling */
+.modal-header {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.modal-title {
+    font-size: 18px;
+}
+
+.modal-footer button {
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+/* Edit Note Section */
+.mm-edit-note-container {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #f5f7fa;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.mm-save-edited-note-btn {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.mm-save-edited-note-btn:hover {
+    background-color: #218838;
+}

@@ -1,0 +1,80 @@
+<section class="navbar-section sticky-top">
+	<nav class="navbar navbar-expand-lg bg-primary d-flex justify-content-between">
+		<div class="mm-navbar-logo-container d-flex justify-content-center align-items-center ms-2" (click)="home()"
+			[tabIndex]="0" (keydown.enter)="home()">
+			<img src="applogo.svg" alt="MultiMate logo" height="30" width="30" />
+			<a class="navbar-brand text-white" href="javascript:void(0);" [tabIndex]="-1">
+				MultiMate
+			</a>
+		</div>
+		<form class="d-flex" role="search">
+
+			<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+			<button class="btn" type="submit">
+				<i class="bi bi-search"></i>
+			</button>
+
+		</form>
+		<div class="d-flex flex-row me-2">
+			<button class="mm-profile-btn bg-transparent text-white border-0" [tabIndex]="0">
+				Profile
+			</button>
+		</div>
+	</nav>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+		<div class="container-fluid">
+			<button class="navbar-toggler ms-auto" type="button" (click)="toggleNavbar()"
+				aria-controls="navbarSupportedContent" [attr.aria-expanded]="!isNavbarCollapsed"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" [class.show]="!isNavbarCollapsed" id="navbarSupportedContent">
+				<!-- <hr /> -->
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item" (click)="home()">
+						<a class="nav-link active" aria-current="page" href="javascript:void(0);">Home</a>
+					</li>
+					<li class="nav-item" (click)="todo()">
+						<a class="nav-link" href="javascript:void(0);">
+							Todo
+						</a>
+					</li>
+					<li class="nav-item" (click)="guessTheNumber()">
+						<a class="nav-link" href="javascript:void(0);">
+							Guess The Number
+						</a>
+					</li>
+					<li class="nav-item" (click)="calculator()">
+						<a class="nav-link" href="javascript:void(0);">
+							Calculator
+						</a>
+					</li>
+					<li class="nav-item" (click)="notes()">
+						<a class="nav-link" href="javascript:void(0);">
+							Notes
+						</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="javascript:void(0);" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">More</a>
+						<ul class="dropdown-menu">
+							<li (click)="randomNumberGenerator()"><a class="dropdown-item" href="javascript:void(0);">
+									Random Number Generator
+								</a></li>
+							<li (click)="vote()"><a class="dropdown-item" href="javascript:void(0);">
+									EVM Online
+								</a></li>
+							<li>
+								<hr class="dropdown-divider">
+							</li>
+							<li (click)="agGrid()"><a class="dropdown-item" href="javascript:void(0);">
+									AG Grid Examples
+								</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</section>

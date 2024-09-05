@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<!-- Random Number Generator (RNG) -->
+<section class="mm-rng-section">
+    <div class="mm-rng-card">
+        <div class="mm-rng-values-container">
+            <div class="mm-rng-value-container mm-rng-min-value">
+                <label for="minValue" class="mm-rng-label">Minimum</label>
+                <input type="number" name="minValue" id="minValue" class="mm-rng-input" [(ngModel)]="minValue" />
+            </div>
+            <div class="mm-rng-value-container mm-rng-max-value">
+                <label for="maxValue" class="mm-rng-label">Maximum</label>
+                <input type="number" name="maxValue" id="maxValue" class="mm-rng-input" [(ngModel)]="maxValue" />
+            </div>
+            <button class="mm-rng-button" (click)="generateRandomNumber()">Generate Random Number</button>
+        </div>
+        <div class="mm-rng-result-container">
+            <label for="randomNumber" class="mm-rng-result-label">Random Number</label>
+            <input type="number" name="randomNumber" id="randomNumber" readonly class="mm-rng-result-input" [(ngModel)]="randomNumber" />
+        </div>
+    </div>
+</section>
