@@ -5,15 +5,10 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 interface User {
-  id: number;              // Unique identifier for the user
-  firstName: string;       // User's first name
-  lastName: string;        // User's last name
-  email: string;           // User's email address
-  role: 'Admin' | 'Employee' | 'Manager';  // User's role in the company
-  isActive: boolean;       // Whether the user is currently active
-  dateJoined: Date;        // Date the user joined the company
+  id: number;
+  name: string;
+  email: string;
 }
-
 
 @Component({
   selector: 'app-crud-test',
@@ -24,16 +19,54 @@ interface User {
 })
 export class CrudTestComponent implements OnInit {
   users: User[] = [];
+  nextId: number = 1;
+  currentUser: Partial<User> = {};
+  isEditing: boolean = false;
 
-  constructor(private titleService: Title) {
-
-  }
+  constructor(private titleService: Title) {}
 
   ngOnInit(): void {
-    this.titleService.setTitle("MultiMate | CRUD Test")
+    this.titleService.setTitle("MultiMate | CRUD Test");
+  }
+
+  onSubmit() {
+    if (this.isEditing) {
+      this.updateUser(this.currentUser as User);
+    } else {
+      this.addUser(this.currentUser as User);
+    }
+    this.resetForm();
   }
 
   addUser(user: User) {
+    if (!user.id) {
+      user.id = this.nextId++;
+    }
     this.users.push(user);
+  }
+
+  removeUser(id: number) {
+    this.users = this.users.filter(user => user.id !== id);
+  }
+
+  editUser(user: User) {
+    this.currentUser = { ...user };
+    this.isEditing = true;
+  }
+
+  updateUser(user: User) {
+    const index = this.users.findIndex(u => u.id === user.id);
+    if (index !== -1) {
+      this.users[index] = user;
+    }
+  }
+
+  cancelEdit() {
+    this.resetForm();
+  }
+
+  resetForm() {
+    this.currentUser = {};
+    this.isEditing = false;
   }
 }

@@ -1,3 +1,27 @@
 <app-header></app-header>
 
-<p>crud-test works!</p>
+<div>
+    <h1>User Management</h1>
+  
+    <!-- Add/Edit User Form -->
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <label for="name">Name:</label>
+      <input id="name" name="name" [(ngModel)]="currentUser.name" required>
+      
+      <label for="email">Email:</label>
+      <input id="email" name="email" [(ngModel)]="currentUser.email" required>
+      
+      <button type="submit">{{ isEditing ? 'Update User' : 'Add User' }}</button>
+      <button *ngIf="isEditing" (click)="cancelEdit()">Cancel</button>
+    </form>
+  
+    <!-- User List -->
+    <ul>
+      <li *ngFor="let user of users">
+        {{ user.name }} ({{ user.email }})
+        <button (click)="editUser(user)">Edit</button>
+        <button (click)="removeUser(user.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  

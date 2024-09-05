@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   isNavbarCollapsed = true;
 
+  isDisabled:boolean = true;
+
   constructor(private renderer: Renderer2, private router: Router) { }
 
   ngOnInit(): void {

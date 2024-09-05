@@ -26,10 +26,10 @@ export class HomeComponent implements OnInit {
             name: "Random Number Generator",
             link: "random-number-generator"
         },
-        {
-            name: "AG Grid",
-            link: "ag-grid"
-        },
+        // {
+        //     name: "AG Grid",
+        //     link: "ag-grid"
+        // },
         {
             name: "Guess The Number",
             link: "guess-the-number"
@@ -63,9 +63,9 @@ export class HomeComponent implements OnInit {
             case "random number generator":
                 this.router.navigate(['/random-number-generator']);
                 break;
-            case "ag grid":
-                this.router.navigate(['/ag-grid']);
-                break;
+            // case "ag grid":
+            //     this.router.navigate(['/ag-grid']);
+            //     break;
             case "guess the number":
                 this.router.navigate(['/guess-the-number']);
                 break;
